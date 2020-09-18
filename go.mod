@@ -1,4 +1,4 @@
-module github.com/go-bindata/go-bindata/v3
+module github.com/xiexiao/go-bindata/v3
 
 go 1.12
 
