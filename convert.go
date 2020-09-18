@@ -100,6 +100,10 @@ func Translate(c *Config) error {
 	if err := writeTOC(bfd, toc); err != nil {
 		return err
 	}
+	// Write table of hash
+	if err := writeHash(bfd, toc); err != nil {
+		return err
+	}
 	// Write hierarchical tree of assets
 	if err := writeTOCTree(bfd, toc); err != nil {
 		return err
