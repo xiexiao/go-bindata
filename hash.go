@@ -43,13 +43,13 @@ func writeHashHeader(w io.Writer) error {
 func AssetHash(name string) (string, error) {
 	canonicalName := strings.Replace(name, "\\", "/", -1)
 	if f, ok := _binhash[canonicalName]; ok {
-		return f
+		return f, nil
 	}
-	return nil, fmt.Errorf("Asset %%s not found", name)
+	return "", fmt.Errorf("Asset %%s not found", name)
 }
 
 // _binhash is a table, holding each asset hash, mapped to its name.
-var _bindata = map[string]string{
+var _binhash = map[string]string{
 `)
 	return err
 }
